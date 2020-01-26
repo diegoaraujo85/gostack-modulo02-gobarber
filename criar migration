@@ -1,0 +1,10 @@
+//cria o arquivo da migration com o nome create-users
+yarn sequelize migration:create --name=create-users
+
+
+//executa a migration
+yarn sequelize db:migrate
+
+//deu errado?
+yarn sequelize db:migrate:undo //desfaz a ultima migration
+yarn sequelize db:migrate:undo:all //desfaz todas a migrations

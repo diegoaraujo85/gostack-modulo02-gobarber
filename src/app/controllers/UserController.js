@@ -21,6 +21,16 @@ class UserController {
     const users = await User.findAll();
     return res.json(users);
   }
+
+  async show(req, res) {}
+
+  async update(req, res) {
+    console.log(req.UserId);
+
+    return res.json({ ok: true });
+  }
+
+  async delete(req, res) {}
 }
 
 export default new UserController();

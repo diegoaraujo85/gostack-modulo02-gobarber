@@ -49,6 +49,15 @@ class AppointmentController {
     const { provider_id, date } = req.body;
 
     /**
+     * check if user != from provider
+     */
+    if (provider_id === req.userId) {
+      return res
+        .status(400)
+        .json({ error: 'Appointment is not available for yourself' });
+    }
+
+    /**
      * check if provider_id is a provider
      */
     const isProvider = await User.findOne({
